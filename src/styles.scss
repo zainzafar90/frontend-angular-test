@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "scss/main.scss";
+
+body {
+  overflow-x: hidden;
+}
+
+.page-content,
+.content-wrapper {
+  min-height: calc(100vh - 50px);
+}

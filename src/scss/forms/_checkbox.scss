@@ -1,0 +1,94 @@
+/* ================== */
+/* [TYPE = CHECKBOX ] */
+/* ================== */
+.checkbox {
+  cursor: pointer;
+}
+
+.checkbox [type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox [type="checkbox"] + span.checker {
+  color: #455a64;
+  border: 2px solid #607d8b;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  border-radius: 2px;
+  -webkit-transition: border-color ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s;
+}
+
+.checkbox [type="checkbox"]:checked + span.checker:before {
+  content: "\e600";
+  font-family: icomoon;
+  font-size: 16px;
+  line-height: 1;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 1;
+}
+
+/* DISABLED */
+.checkbox [type="checkbox"]:disabled + span.checker {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox .checker,
+.radio .checker {
+  top: -1px;
+  left: 0;
+  margin-right: 7px;
+}
+
+.checker {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+}
+
+/* Primary */
+.checkbox.checkbox-primary span.checker {
+  color: #1565c0;
+  border-color: #1e88e5;
+}
+
+/* Info */
+.checkbox.checkbox-info span.checker {
+  color: #00bcd4;
+  border-color: #00bcd4;
+}
+
+/* Success */
+.checkbox.checkbox-success span.checker {
+  color: #3d8b40;
+  border-color: #3d8b40;
+}
+
+/* Warning */
+.checkbox.checkbox-warning span.checker {
+  color: #ee3900;
+  border-color: #e43700;
+}
+
+/* Danger */
+.checkbox.checkbox-danger span.checker {
+  color: #c82333;
+  border-color: #bd2130;
+}
+
+/* Teal */
+.checkbox.checkbox-teal span.checker {
+  color: #3ca982;
+  border-color: #359674;
+}

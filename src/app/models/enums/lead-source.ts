@@ -1,0 +1,8 @@
+export enum LeadSource {
+  REFERRAL = "REFERRAL",
+  GOOGLE = "GOOGLE",
+  FACBOOK = "FACBOOK",
+  INSTAGRAM = "INSTAGRAM",
+  EMAIL = "EMAIL",
+  OTHER = "OTHER"
+}

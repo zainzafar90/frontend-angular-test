@@ -1,0 +1,117 @@
+<app-page-header>
+  <!-- Page Header Title -->
+  <h4 page-header-title>
+    <span class="font-weight-semibold">Invoices</span> - View
+  </h4>
+
+  <!-- Page Header Elements -->
+  <div class="header-elements d-none" page-header-elements>
+    <a
+      class="btn btn-labeled btn-labeled-right bg-danger-800"
+      [routerLink]="['/invoices/create']"
+    >
+      Create Invoice <b><i class="icon-plus-circle2"></i></b>
+    </a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumb" page-header-breadcrumbs>
+    <a routerLink="/invoices" class="breadcrumb-item">
+      <i class="icon-home2 mr-2"></i> Home
+    </a>
+    <a routerLink="/invoices" class="breadcrumb-item">Invoices</a>
+    <span class="breadcrumb-item active">List</span>
+  </div>
+</app-page-header>
+
+<!-- Content area -->
+<div class="content">
+  <!-- Invoice archive -->
+  <div class="card  table-responsive">
+    <table class="table table-lg invoice-archive">
+      <thead>
+        <tr class="table-active">
+          <th>#</th>
+          <th>
+            <div
+              class="align-items-center d-flex justify-content-between sorting-header"
+            >
+              <div class="header-content">Issue Date</div>
+              <div class="sorting-arrows d-flex flex-column">
+                <a class="icon-arrow-up22 position-right text-subheading"></a>
+                <a class="icon-arrow-down22 position-right text-subheading"></a>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div
+              class="align-items-center d-flex justify-content-between sorting-header"
+            >
+              Issued to
+              <div class="sorting-arrows d-flex flex-column">
+                <a class="icon-arrow-up22 position-right text-subheading"></a>
+                <a class="icon-arrow-down22 position-right text-subheading"></a>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div
+              class="align-items-center d-flex justify-content-between sorting-header"
+            >
+              Status
+              <div class="sorting-arrows d-flex flex-column">
+                <a class="icon-arrow-up22 position-right text-subheading"></a>
+                <a class="icon-arrow-down22 position-right text-subheading"></a>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div
+              class="align-items-center d-flex justify-content-between sorting-header"
+            >
+              Due date
+              <div class="sorting-arrows d-flex flex-column">
+                <a class="icon-arrow-up22 position-right text-subheading"></a>
+                <a class="icon-arrow-down22 position-right text-subheading"></a>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div
+              class="align-items-center d-flex justify-content-between sorting-header"
+            >
+              Amount
+              <div class="sorting-arrows d-flex flex-column">
+                <a class="icon-arrow-up22 position-right text-subheading"></a>
+                <a class="icon-arrow-down22 position-right text-subheading"></a>
+              </div>
+            </div>
+          </th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let invoice of invoices">
+          <tr app-invoice-item [invoice]="invoice"></tr>
+        </ng-container>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="7" class="p-0">
+            <div class="datatable-footer">
+              <div class="dataTables_info">Showing 1 to 25 of 25 entries</div>
+              <div class="dataTables_paginate paging_simple_numbers">
+                <a class="paginate_button previous disabled">←</a>
+                <span><a class="paginate_button current">1</a></span>
+                <span><a class="paginate_button">2</a></span>
+                <a class="paginate_button next disabled">→</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /invoice archive -->
+</div>
+<!-- /content area -->

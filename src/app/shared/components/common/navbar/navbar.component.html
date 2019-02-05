@@ -1,0 +1,76 @@
+<!-- Header with logos -->
+<div class="navbar-header navbar-dark d-none d-md-flex align-items-md-center">
+  <div class="navbar-brand navbar-brand-md">
+    <a class="d-inline-block" routerLink="/">
+      <img src="assets/images/logo_light.png" alt="" />
+    </a>
+  </div>
+
+  <div class="navbar-brand navbar-brand-xs">
+    <a class="d-inline-block" routerLink="/">
+      <img src="assets/images/logo_icon_light.png" alt="" />
+    </a>
+  </div>
+</div>
+<!-- /header with logos -->
+
+<!-- Mobile controls -->
+<div class="d-flex flex-1 d-md-none">
+  <div class="navbar-brand mr-auto">
+    <a class="d-inline-block">
+      <img src="assets/images/logo_dark.png" alt="" />
+    </a>
+  </div>
+
+  <button class="navbar-toggler" type="button" (click)="toggleMobileNavbar()">
+    <i class="icon-paragraph-justify3"></i>
+  </button>
+</div>
+<!-- /mobile controls -->
+
+<!-- Navbar content -->
+<div
+  class="collapse navbar-collapse"
+  id="navbar-mobile"
+  [class.show]="showMobileNavbar"
+>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a
+        class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block"
+        (click)="toggleMinimizedSidebar()"
+      >
+        <i class="icon-transmission"></i>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li
+      class="nav-item dropdown dropdown-user"
+      ngbDropdown
+      placement="bottom-right"
+    >
+      <a class="navbar-nav-link dropdown-toggle" ngbDropdownToggle>
+        <a class="btn bg-primary-800 rounded-round btn-icon btn-sm">
+          <span class="letter-icon">Z</span>
+        </a>
+        <span>Hello, Zain</span>
+      </a>
+
+      <div
+        class="dropdown-menu dropdown-menu-left"
+        ngbDropdownMenu
+        aria-labelledby="dropdownBasic1"
+      >
+        <a class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
+        <a class="dropdown-item" routerLink="/auth/login"
+          ><i class="icon-switch2"></i> Logout</a
+        >
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- /navbar content -->

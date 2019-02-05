@@ -1,0 +1,54 @@
+<ng-container *ngIf="invoice">
+  <td>#00{{ invoice.id }}</td>
+  <td>{{ invoice.dueDate }}</td>
+  <td>
+    <h6 class="mb-0">
+      <a> {{ fullname }} </a>
+      <span class="d-block font-size-sm text-muted">
+        Payment method: <span class="text-uppercase">{{ invoice.method }}</span>
+      </span>
+    </h6>
+  </td>
+  <td>
+    <select
+      name="status"
+      class="form-control form-control-select2"
+      data-placeholder="Select status"
+    >
+      <option value="overdue">Overdue</option>
+      <option value="hold" selected>On hold</option>
+      <option value="pending">Pending</option>
+      <option value="paid">Paid</option>
+    </select>
+  </td>
+  <td>
+    <span
+      class="badge"
+      [class.badge-success]="invoice.status === paymentStatus.PAID"
+      [class.badge-warning]="invoice.status === paymentStatus.PENDING"
+      [class.badge-danger]="invoice.status === paymentStatus.OVERDUE"
+      [class.badge-secondary]="invoice.status === paymentStatus.ONHOLD"
+      [class.badge-primary]="invoice.status === paymentStatus.PARTIAL"
+    >
+      {{ invoice.status }}
+    </span>
+  </td>
+  <td>
+    <h6 class="mb-0 font-weight-bold">
+      {{ invoice.balance }} PKR
+      <span
+        class="d-block font-size-sm text-muted font-weight-normal"
+        *ngIf="invoice.discount"
+      >
+        DISCOUNT: {{ invoice.discount | percent }}
+      </span>
+    </h6>
+  </td>
+  <td class="text-center">
+    <div class="list-icons list-icons-extended">
+      <a [routerLink]="['/invoices/view']" class="list-icons-item">
+        <i class="icon-file-eye"></i>
+      </a>
+    </div>
+  </td>
+</ng-container>
