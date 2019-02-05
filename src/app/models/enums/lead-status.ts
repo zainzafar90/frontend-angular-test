@@ -1,5 +1,0 @@
-export enum LeadStatus {
-  CONVERTED = "CONVERTED",
-  DISQUALIFIED = "DISQUALIFIED",
-  PENDING = "PENDING"
-}
