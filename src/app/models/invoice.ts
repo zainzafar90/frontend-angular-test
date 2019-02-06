@@ -4,7 +4,7 @@ import { PaymentMethod } from "./enums/payment-method";
 export interface Invoice {
   id: number;
   balance: string;
-  discount: 0;
+  discount: number;
   email: string;
   phone: string;
   dueDate: string;
